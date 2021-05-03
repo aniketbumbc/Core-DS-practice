@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"binarySearch.js":[function(require,module,exports) {
+})({"Practice Code/BinarySearch.js":[function(require,module,exports) {
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
@@ -132,87 +132,59 @@ var Node = function Node(value) {
   this.right = null;
 };
 
-var BSTree = /*#__PURE__*/function () {
-  function BSTree() {
-    _classCallCheck(this, BSTree);
+var BST = /*#__PURE__*/function () {
+  function BST() {
+    _classCallCheck(this, BST);
 
     this.root = null;
-  } // insert Value
+  }
 
-
-  _createClass(BSTree, [{
+  _createClass(BST, [{
     key: "insert",
     value: function insert(value) {
-      var newNode = new Node(value); // check root node is present or not
+      var newNode = new Node(value); // check for root node
 
       if (this.root === null) {
         this.root = newNode;
         return this;
-      } // if root node is present
-
-
-      var currentRootNode = this.root;
-
-      while (true) {
-        // if same value is added
-        if (value === currentRootNode.value) {
-          return null;
-        } // check if value is less than current node(parent node) value
-
-
-        if (value < currentRootNode.value) {
-          if (currentRootNode.left === null) {
-            currentRootNode.left = newNode;
-            return this;
-          } else {
-            currentRootNode = currentRootNode.left;
-          }
-        } else if (value > currentRootNode.value) {
-          if (currentRootNode.right === null) {
-            currentRootNode.right = newNode;
-            return this;
-          } else {
-            currentRootNode = currentRootNode.right;
-          }
-        }
-      }
-    } //find value
-
-  }, {
-    key: "find",
-    value: function find(value) {
-      if (this.root === null) {
-        return false;
       }
 
       var currentNode = this.root;
-      var found = false;
 
-      while (!found && currentNode) {
+      while (true) {
+        if (value === currentNode.value) {
+          return null;
+        }
+
         if (value < currentNode.value) {
-          currentNode = currentNode.left;
+          if (currentNode.left === null) {
+            currentNode.left = newNode;
+            return this;
+          } else {
+            currentNode = currentNode.left;
+          }
         } else if (value > currentNode.value) {
-          currentNode = currentNode.right;
-        } else {
-          found = true;
+          if (currentNode.right === null) {
+            currentNode.right = newNode;
+            return this;
+          } else {
+            currentNode = currentNode.right;
+          }
         }
       }
-
-      return currentNode;
     }
   }]);
 
-  return BSTree;
+  return BST;
 }();
 
-var tree = new BSTree();
-tree.insert(10);
-tree.insert(4);
-tree.insert(2);
-tree.insert(13);
-tree.insert(13);
-console.log(tree);
-console.log(tree.find(2));
+var node1 = new BST();
+node1.insert(100);
+node1.insert(50);
+node1.insert(102);
+node1.insert(25);
+node1.insert(25);
+console.log(node1);
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -417,5 +389,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","binarySearch.js"], null)
-//# sourceMappingURL=/binarySearch.ddd75795.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","Practice Code/BinarySearch.js"], null)
+//# sourceMappingURL=/BinarySearch.19e70f5a.js.map
