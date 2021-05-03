@@ -212,6 +212,7 @@ tree.insert(16);
 tree.insert(20);
 tree.insert(1);
 console.log(tree);
+console.log(tree.find(2));
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

@@ -74,3 +74,5 @@ tree.insert(16);
 tree.insert(20);
 tree.insert(1);
 console.log(tree);
+
+console.log(tree.find(2));
