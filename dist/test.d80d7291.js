@@ -117,74 +117,45 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"Practice Code/BinarySearch.js":[function(require,module,exports) {
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Node = function Node(value) {
-  _classCallCheck(this, Node);
-
-  this.value = value;
-  this.left = null;
-  this.right = null;
-};
-
-var BST = /*#__PURE__*/function () {
-  function BST() {
-    _classCallCheck(this, BST);
-
-    this.root = null;
-  }
-
-  _createClass(BST, [{
-    key: "insert",
-    value: function insert(value) {
-      var newNode = new Node(value); // check for root node
-
-      if (this.root === null) {
-        this.root = newNode;
-        return this;
-      }
-
-      var currentNode = this.root;
-
-      while (true) {
-        if (value === currentNode.value) {
-          return null;
-        }
-
-        if (value < currentNode.value) {
-          if (currentNode.left === null) {
-            currentNode.left = newNode;
-            return this;
-          } else {
-            currentNode = currentNode.left;
-          }
-        } else if (value > currentNode.value) {
-          if (currentNode.right === null) {
-            currentNode.right = newNode;
-            return this;
-          } else {
-            currentNode = currentNode.right;
-          }
-        }
-      }
+})({"Practice Code/test.js":[function(require,module,exports) {
+// function getPersonName(persons) {
+//   return persons.map((person) => {
+//     person.lastname = person.lastName.toUpperCase();
+//     return person;
+//   });
+// }
+// function getPersonAdd(persons) {
+//   return persons.map((person) => {
+//     person.add = '.......';
+//     return person;
+//   });
+// }
+// const persons = [
+//   { name: 'Bart', lastName: 'Simpson', address: 'md' },
+//   { name: 'Harry', lastName: 'Potter', address: 'kd' },
+//   { name: 'Sherikc', lastName: 'Homes', address: 'uk' },
+// ];
+// const getCaptial = getPersonName(persons);
+// const cenPerson = getPersonAdd(persons);
+// console.log('getCap', getCaptial);
+// console.log('cenPer', cenPerson);
+// const harry = getCaptial.find(({ name }) => name === 'Harry');
+// console.log('harry', harry);
+function generateNewFolderName(existingFolders) {
+  var count = 0;
+  var name = '';
+  existingFolders.forEach(function (folderName) {
+    if (folderName !== 'New Folder') {
+      name = 'New Folder';
+    } else if (folderName === 'New Folder') {
+      count++;
+      name = "New Folder ".concat(count);
     }
-  }]);
+  });
+  return name;
+}
 
-  return BST;
-}();
-
-var node1 = new BST();
-node1.insert(100);
-node1.insert(50);
-node1.insert(102);
-node1.insert(25);
-node1.insert(25);
-console.log(node1);
+console.log(generateNewFolderName(['New Folder']));
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -389,5 +360,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","Practice Code/BinarySearch.js"], null)
-//# sourceMappingURL=/BinarySearch.19e70f5a.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","Practice Code/test.js"], null)
+//# sourceMappingURL=/test.d80d7291.js.map
