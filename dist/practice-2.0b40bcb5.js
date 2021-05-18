@@ -138,9 +138,29 @@ function avgPair(arry, pair) {
   }
 
   return false;
+} // console.log(avgPair([-1, 0, 3, 4, 5, 6], 4.1));
+
+
+function maxSubarrayNum(arr, num) {
+  var total = 0;
+
+  for (var i = 0; i < num; i++) {
+    total += arr[i];
+  }
+
+  var currentTotal = total;
+
+  for (var j = num; j < arr.length; j++) {
+    console.log(arr[j], arr[j - num], currentTotal);
+    currentTotal += arr[j] - arr[j - num];
+    console.log('current', currentTotal);
+    total = Math.max(total, currentTotal);
+  }
+
+  return total;
 }
 
-console.log(avgPair([-1, 0, 3, 4, 5, 6], 4.1));
+console.log(maxSubarrayNum([100, 200, 300, 400], 2));
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
